@@ -149,6 +149,9 @@ textarea {
   border-radius: 5px;
   border: none;
   outline: none;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 button {
