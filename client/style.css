@@ -163,6 +163,9 @@ form img {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    height: auto;
+  }
   textarea {
     font-size: 18px;
     padding: 3px;
