@@ -125,7 +125,9 @@ body {
 }
 
 form {
-  width: 100%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
@@ -149,9 +151,6 @@ textarea {
   border-radius: 5px;
   border: none;
   outline: none;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
 }
 
 button {
