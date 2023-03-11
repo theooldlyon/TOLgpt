@@ -37,9 +37,6 @@ body {
 
   padding-bottom: 20px;
   scroll-behavior: smooth;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
 
   padding: 40px;
 }
@@ -77,8 +74,8 @@ body {
 }
 
 .profile {
-  width: 36px;
-  height: 36px;
+  width: 20px;
+  height: 20px;
   border-radius: 5px;
 
   background: #343541;
@@ -102,7 +99,7 @@ body {
 .message {
   flex: 1;
 
-  font-size: 20px;
+  font-size: 23px;
 
   max-width: 100%;
   overflow-x: scroll;
@@ -125,9 +122,9 @@ body {
 }
 
 form {
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
@@ -144,7 +141,7 @@ textarea {
   width: 100%;
 
   color: black;
-  font-size: 18px;
+  font-size: 23px;
 
   padding: 10px;
   background: transparent;
@@ -163,4 +160,74 @@ button {
 form img {
   width: 30px;
   height: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  textarea {
+    font-size: 18px;
+    padding: 3px;
+  }
+  form {
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    /* gap: 10px; */
+    margin-bottom: 10px;
+  }
+  form img {
+    width: 25px;
+    height: 25px;
+  }
+  .message {
+    flex: 1;
+
+    font-size: 18px;
+
+    max-width: 100%;
+    overflow-x: scroll;
+
+    /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+    white-space: pre-wrap;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .chat {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  #chat_container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+
+    padding: 25px;
+  }
 }
