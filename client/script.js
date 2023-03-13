@@ -67,8 +67,11 @@ function chatStripe (isAi, value, uniqueId) {
 }
 
 const handleSubmit = async (e) => {
+
   e.preventDefault();
 
+  const welcomeDiv = document.querySelector('#benvenuto');
+  welcomeDiv.style.display = 'none';
   const data = new FormData(form);
 
   // user's chatstripe

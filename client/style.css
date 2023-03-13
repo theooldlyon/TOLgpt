@@ -18,6 +18,12 @@ body {
     #409f9f 100%
   );
 }
+#benvenuto {
+  margin: auto;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 50px;
+}
 
 #app {
   width: 100vw;
