@@ -122,9 +122,9 @@ body {
 }
 
 form {
-  width: 98%;
-  margin-left: 1%;
-  margin-right: 1%;
+  width: 98vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
@@ -172,9 +172,9 @@ form img {
     padding: 5px;
   }
   form {
-    width: 90%;
-    margin-left: 1%;
-    margin-right: 1%;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
     max-width: 600px;
     margin: 0 auto;
     background: white;
