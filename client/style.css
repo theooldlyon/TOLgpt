@@ -195,7 +195,7 @@ form img {
 
 @media only screen and (max-width: 600px) {
   #app {
-    max-height: 90vh;
+    max-height: 100vh;
     max-width: 100vw;
   }
   textarea {
