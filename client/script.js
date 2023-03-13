@@ -33,7 +33,7 @@ function typeText (element, text) {
     }
 
     chatContainer.scrollTop = chatContainer.scrollHeight;
-  }, 20);
+  }, 50);
 
 }
 
