@@ -8,14 +8,28 @@
 }
 
 body {
-  background: #343541;
+  /* background: #343541; */
+  background-color: #f901ff;
+  background-image: linear-gradient(
+    225deg,
+    #f901ff 0%,
+    #975b5b 47%,
+    #409f9f 100%
+  );
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  background: white;
-  color: black;
+  background-color: #f901ff;
+  background-image: linear-gradient(
+    225deg,
+    #f901ff 0%,
+    #975b5b 47%,
+    #409f9f 100%
+  );
+
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +40,7 @@ body {
   flex: 1;
   width: 100vw;
   height: 100vh;
-  overflow-y: scroll;
+  overflow: scroll;
 
   display: flex;
   flex-direction: column;
@@ -52,9 +66,11 @@ body {
 }
 
 .ai {
-  background: #343541;
-  color: white;
+  background: white;
+  color: black;
+
   border-radius: 20px;
+  opacity: 80%;
 
   /* width: 50%;
   margin-left: 25%;
@@ -74,11 +90,11 @@ body {
 }
 
 .profile {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 5px;
 
-  background: #343541;
+  background: transparent;
 
   display: flex;
   justify-content: center;
@@ -86,7 +102,13 @@ body {
 }
 
 .ai .profile {
-  background: #343541;
+  background-color: #f901ff;
+  background-image: linear-gradient(
+    225deg,
+    #f901ff 0%,
+    #975b5b 47%,
+    #409f9f 100%
+  );
   border: 2px solid white;
 }
 
@@ -98,10 +120,9 @@ body {
 
 .message {
   flex: 1;
-
   font-size: 23px;
 
-  max-width: 100%;
+  max-width: 90vw;
   overflow-x: scroll;
 
   /*
@@ -128,19 +149,19 @@ form {
   max-width: 1280px;
   margin: 0 auto;
   padding: 10px;
-  background: white;
+  background: transparent;
   display: flex;
   flex-direction: row;
   gap: 10px;
-  border: 2px solid #343541;
+  border: 1px solid white;
   border-radius: 12px;
   margin-bottom: 10px;
 }
 
 textarea {
   width: 100%;
-
-  color: black;
+  resize: none;
+  color: white;
   font-size: 23px;
 
   padding: 10px;
@@ -148,6 +169,9 @@ textarea {
   border-radius: 5px;
   border: none;
   outline: none;
+}
+::placeholder {
+  color: white;
 }
 
 button {
@@ -177,7 +201,7 @@ form img {
     margin-right: 5vw;
     max-width: 600px;
     margin: 0 auto;
-    background: white;
+    background: transparent;
     display: flex;
     flex-direction: row;
     gap: 10px;

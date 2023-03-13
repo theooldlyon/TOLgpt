@@ -4,18 +4,19 @@ import user from './assets/user.svg';
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
+
 let loadInterval;
 
 function loader (element) {
-  element.textContent = '';
+  element.textContent = ' ';
 
   loadInterval = setInterval(() => {
     // Update the text content of the loading indicator
     element.textContent += '.';
 
     // If the loading indicator has reached three dots, reset it
-    if (element.textContent === '....') {
-      element.textContent = '';
+    if (element.textContent === ' ....') {
+      element.textContent = ' ';
     }
   }, 300);
 }
@@ -30,7 +31,10 @@ function typeText (element, text) {
     } else {
       clearInterval(interval);
     }
+
+    chatContainer.scrollTop = chatContainer.scrollHeight;
   }, 20);
+
 }
 
 // generate unique ID for each message div of bot
@@ -104,6 +108,8 @@ const handleSubmit = async (e) => {
     const parsedData = data.bot.trim(); // trims any trailing spaces/'\n' 
 
     typeText(messageDiv, parsedData);
+
+
   } else {
     const err = await response.text();
 
