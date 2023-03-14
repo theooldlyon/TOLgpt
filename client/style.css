@@ -10,12 +10,12 @@
 
 body {
   /* background: #343541; */
-  background-color: #f901ff;
+  background-color: #000000;
   background-image: linear-gradient(
-    225deg,
-    #f901ff 0%,
-    #975b5b 47%,
-    #409f9f 100%
+    132deg,
+    #000000 0%,
+    #887619 50%,
+    #ffcf2d 100%
   );
 }
 #benvenuto {
@@ -28,12 +28,12 @@ body {
 #app {
   width: 100vw;
   height: 100vh;
-  background-color: #f901ff;
+  background-color: #000000;
   background-image: linear-gradient(
-    225deg,
-    #f901ff 0%,
-    #975b5b 47%,
-    #409f9f 100%
+    132deg,
+    #000000 0%,
+    #887619 50%,
+    #ffcf2d 100%
   );
 
   color: white;
@@ -45,7 +45,7 @@ body {
 
 #chat_container {
   flex: 1;
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   overflow: scroll;
 
@@ -109,12 +109,12 @@ body {
 }
 
 .ai .profile {
-  background-color: #f901ff;
+  background-color: #000000;
   background-image: linear-gradient(
-    225deg,
-    #f901ff 0%,
-    #975b5b 47%,
-    #409f9f 100%
+    132deg,
+    #000000 0%,
+    #887619 50%,
+    #ffcf2d 100%
   );
   border: 2px solid white;
 }
@@ -127,7 +127,7 @@ body {
 
 .message {
   flex: 1;
-  font-size: 23px;
+  font-size: 20px;
 
   max-width: 90vw;
   overflow-x: scroll;
@@ -150,7 +150,7 @@ body {
 }
 
 form {
-  width: 90vw;
+  width: 50vw;
   margin-left: 10vw;
   margin-right: 1vw;
   max-width: 1280px;
@@ -170,7 +170,7 @@ textarea {
   width: 100%;
   resize: none;
   color: white;
-  font-size: 23px;
+  font-size: 20px;
 
   padding: 10px;
   background: transparent;
@@ -204,7 +204,7 @@ form img {
     padding: 5px;
   }
   form {
-    max-width: 90vw;
+    width: 90vw;
     margin-left: 5vw;
     margin-right: 5vw;
     max-width: 600px;
@@ -226,7 +226,7 @@ form img {
 
     font-size: 18px;
 
-    max-width: 90vw;
+    width: 90vw;
     overflow-x: scroll;
 
     /*
@@ -251,7 +251,7 @@ form img {
   }
   #chat_container {
     flex: 1;
-    max-width: 100vw;
+    width: 100vw;
     max-height: 100vh;
     overflow-y: scroll;
 
@@ -266,5 +266,11 @@ form img {
     scroll-behavior: smooth;
 
     padding: 25px;
+  }
+  #logo {
+    width: 200px;
+  }
+  #benvenuto {
+    font-size: 25px;
   }
 }
