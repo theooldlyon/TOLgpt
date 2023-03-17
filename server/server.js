@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
 app.get('/chatbot', async (req, res) => {
     res.sendFile('../client/chatbot.html', function (err) {
         if (err) {
-            next(err);
+            console.log(err);
         } else {
             console.log('Sent:', fileName);
         }
