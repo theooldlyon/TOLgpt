@@ -29,7 +29,7 @@ app.get('/chatbot', async (req, res) => {
             console.log('Sent:', fileName);
         }
     });
-}
+});
 
 
 
