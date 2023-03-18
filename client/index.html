@@ -34,7 +34,7 @@
       const chatBtn = document.getElementById("chat-btn");
 
       chatBtn.addEventListener("click", async () => {
-        await fetch("http://localhost:5000/chatbot", {
+        await fetch("https://tolgpt.onrender.com/chatbot", {
           method: "GET",
         });
       });
