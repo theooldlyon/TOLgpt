@@ -2,6 +2,8 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
@@ -15,22 +17,39 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', async (req, res) => {
-    res.status(200).send({
-        message: 'Hello from CodeX!'
-    });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+// Aggiungi il middleware per servire i file statici con i tipi MIME corretti
+app.use(
+    express.static(join(__dirname, '..', 'client'), {
+        setHeaders: (res, path) => {
+            if (path.endsWith('.js')) {
+                res.setHeader('Content-Type', 'application/javascript');
+            } else if (path.endsWith('.svg')) {
+                res.setHeader('Content-Type', 'image/svg+xml');
+            }
+        },
+    })
+);
+
+app.get('/', (req, res) => {
+    const homeFilePath = join(__dirname, '..', 'client', 'index.html');
+    res.sendFile(homeFilePath);
 });
 
-app.get('/chatbot', async (req, res) => {
-    res.sendFile('../client/chatbot.html', function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('Sent:', fileName);
-        }
-    });
+
+
+app.get('/chatbot', (req, res) => {
+    const chatbotFilePath = join(__dirname, '..', 'client', 'chatbot.html');
+    res.sendFile(chatbotFilePath);
 });
 
+// ...
+
+// ...
+
+
+// ...
 
 
 app.post('/', async (req, res) => {

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./public/TOLlion.png" />
+    <link rel="icon" type="image/svg+xml" href="/client/assets/bot.svg" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0 maximum-scale=1"
@@ -13,7 +13,7 @@
   <body>
     <div id="welcome">
       <img
-        src="./assets/TOLGPT logo bianco.png"
+        src="./assets/TOLGPT-logo-bianco.png"
         alt=""
         srcset=""
         id="logo"
@@ -24,8 +24,7 @@
       <p>La prima Intelligenza Artificiale Made in Italy!</p>
       <br />
       <br />
-      <button class="button" id="chat-btn">ChatBot</button>
-      <a href="chatbot"><button class="button">The Image Generator</button></a>
+      <a href="chatbot"><button class="button">The Chat Assistant</button></a>
       <a href="pagina3.html"
         ><button class="button">The Bot Developer</button></a
       >
@@ -35,7 +34,7 @@
       const chatBtn = document.getElementById("chat-btn");
 
       chatBtn.addEventListener("click", async () => {
-        await fetch("https://tolgpt.onrender.com/chatbot", {
+        await fetch("http://localhost:5000/chatbot", {
           method: "GET",
         });
       });
