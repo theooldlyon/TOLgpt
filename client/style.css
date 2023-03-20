@@ -82,7 +82,7 @@ body {
   /* width: 50%;
   margin-left: 25%;
   border-radius: 20px; */
-  padding: 40px;
+  padding: 20px;
 }
 
 .chat {
@@ -212,7 +212,6 @@ form img {
     margin-right: 5vw;
     max-width: 600px;
     margin: 0 auto;
-    background: transparent;
     display: flex;
     flex-direction: row;
     gap: 10px;
