@@ -1769,6 +1769,7 @@ const handleSubmit = async (e) => {
   loader(messageDiv);
 
   const response = await fetch('https://tolgpt.onrender.com', {
+
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -20,13 +20,24 @@ body {
   font-size: 40px;
 }
 .button {
-  margin-right: 5vw;
-  padding: 10px;
-  background-color: whitesmoke;
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 200px;
+  /* width: 50vw; */
+  font-size: 25px;
+  padding: 20px;
+  background-color: white;
+  opacity: 70%;
+  color: rgb(25, 21, 21);
+  border: 1px solid rgb(25, 21, 21);
+  border-radius: 15px;
+}
+button:hover {
+  /* width: 50vw; */
+  font-size: 25px;
+  padding: 20px;
+  background-color: rgb(25, 21, 21);
+  opacity: 70%;
+  color: white;
+  border: 0.7px solid white;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -41,9 +52,5 @@ body {
   }
   #logo {
     width: 280px;
-  }
-  .button {
-    margin-top: 5vw;
-    margin-right: 0;
   }
 }
