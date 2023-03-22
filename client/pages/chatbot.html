@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="icon" type="image/svg+xml" href="/client/assets/bot.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+
+    <title>TOLgpt</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="chat_container">
+        <div id="benvenuto">
+          <img
+            src="./assets/TOLGPT-logo-bianco.png"
+            alt=""
+            srcset=""
+            id="logo"
+            width="500px"
+          />
+        </div>
+      </div>
+      <form action="">
+        <textarea
+          wrap="off"
+          name="prompt"
+          cols="1"
+          rows="1"
+          placeholder="Chiedi tutto ciò che vuoi..."
+        ></textarea>
+        <button type="submit"><img src="assets/send.svg" /></button>
+      </form>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

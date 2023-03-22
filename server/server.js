@@ -36,14 +36,18 @@ app.use(
     ));
 
 app.get('/', (req, res) => {
-    const homeFilePath = join(__dirname, '..', 'client', 'index.html');
+    const homeFilePath = join(__dirname, '..', 'client', 'pages', 'index.html');
     res.sendFile(homeFilePath);
 });
 
 
 
 app.get('/chatbot', (req, res) => {
-    const chatbotFilePath = join(__dirname, '..', 'client', 'chatbot.html');
+    const chatbotFilePath = join(__dirname, '..', 'client', 'pages', 'chatbot.html');
+    res.sendFile(chatbotFilePath);
+});
+app.get('/chatbot2', (req, res) => {
+    const chatbotFilePath = join(__dirname, '..', 'client', 'pages', 'chatbot2.html');
     res.sendFile(chatbotFilePath);
 });
 
@@ -74,6 +78,28 @@ app.post('/', async (req, res) => {
         res.status(200).send({
             bot: response.data.choices[ 0 ].text
         });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error || 'Something went wrong');
+    }
+});
+
+app.post('/image', async (req, res) => {
+    try {
+        const prompt = req.body.prompt;
+        if (prompt === '') res.status(200).send('Please, write a valid request');
+
+        const buffer = prompt;
+        // Set a `name` that ends with .png so that the API knows it's a PNG image
+        buffer.name = "image.png";
+        const response = await openai.createImageVariation(
+            buffer,
+            1,
+            "1024x1024"
+        );
+        console.log(response.data.data[ 0 ].url);
+
 
     } catch (error) {
         console.error(error);
