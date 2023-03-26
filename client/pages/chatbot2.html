@@ -13,9 +13,17 @@
   </head>
   <body>
     <div id="app">
+      <button id="toggleSidebarButton">
+        <img src="/client/assets/icons8-hamburger-menu-96.png" width="20px" />
+      </button>
+
       <div id="sidebar">
-        <button id="newChatButton">Nuova Chat</button>
+        <button id="closeSidebarButton" style="display: none">CLOSE</button>
+        <button id="newChatButton" style="font-size: 20px; padding: 5px">
+          +
+        </button>
         <ul id="chatList"></ul>
+        <button id="closeSidebarButton" style="display: none">Chiudi</button>
       </div>
       <div id="chatContainerWrapper">
         <div id="benvenuto">
@@ -24,11 +32,10 @@
             alt=""
             srcset=""
             id="logo"
-            width="500px"
+            width="50%"
           />
         </div>
       </div>
-
       <form>
         <textarea
           wrap="off"
@@ -37,7 +44,7 @@
           rows="1"
           placeholder="Chiedi tutto ciò che vuoi..."
         ></textarea>
-        <button type="submit"><img src="/client/assets/send.svg" /></button>
+        <!-- <button type="submit"><img src="/client/assets/send.svg" /></button> -->
       </form>
     </div>
 

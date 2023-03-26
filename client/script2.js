@@ -1667,20 +1667,22 @@ const user = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fil
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
 </svg>`;
 
+const welcomeDiv = document.querySelector('#benvenuto');
+
 
 const form = document.querySelector('form');
 
 let loadInterval;
 
 function loader (element) {
-    element.textContent = ' ';
+    element.textContent = '';
 
     loadInterval = setInterval(() => {
         // Update the text content of the loading indicator
         element.textContent += '.';
 
         // If the loading indicator has reached three dots, reset it
-        if (element.textContent === ' ....') {
+        if (element.textContent === '....') {
             element.textContent = ' ';
         }
     }, 500);
@@ -1688,7 +1690,7 @@ function loader (element) {
 
 function typeText (element, text) {
 
-    element.innerHTML += text;
+    element.innerHTML = text;
     chatContainerWrapper.scrollTop = chatContainerWrapper.scrollHeight;
 
 }
@@ -1726,7 +1728,6 @@ const handleSubmit = async (e) => {
     if (!activeChat) {
         return;
     }
-    const welcomeDiv = document.querySelector('#benvenuto');
     welcomeDiv.style.display = 'none';;
     const data = new FormData(form);
 
@@ -1778,62 +1779,7 @@ const handleSubmit = async (e) => {
         console.log(err);
     }
 };
-// const handleSubmit = async (e) => {
 
-//     e.preventDefault();
-
-//     const welcomeDiv = document.querySelector('#benvenuto');
-//     welcomeDiv.style.display = 'none';
-//     const data = new FormData(form);
-
-//     // user's chatstripe
-//     chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
-
-//     // to clear the textarea input 
-//     form.reset();
-
-//     // bot's chatstripe
-//     const uniqueId = generateUniqueId();
-//     chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
-
-//     // to focus scroll to the bottom 
-//     chatContainer.scrollTop = chatContainer.scrollHeight;
-
-//     // specific message div 
-//     const messageDiv = document.getElementById(uniqueId);
-
-//     // messageDiv.innerHTML = "..."
-//     loader(messageDiv);
-
-//     const response = await fetch('https://tolgpt.onrender.com', {
-
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({
-//             prompt: data.get('prompt')
-//         })
-//     });
-
-//     clearInterval(loadInterval);
-//     messageDiv.innerHTML = " ";
-
-//     if (response.ok) {
-//         const data = await response.json();
-//         const parsedData = data.bot.trim(); // trims any trailing spaces/'\n' 
-
-//         typeText(messageDiv, parsedData);
-
-
-//     } else {
-//         const err = await response.text();
-
-//         messageDiv.innerHTML = "Something went wrong";
-//         alert(err);
-//         console.log(err);
-//     }
-// };
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
@@ -1897,3 +1843,22 @@ newChatButton.addEventListener("click", addNewChat);
 
 addNewChat();
 
+const toggleSidebarButton = document.getElementById("toggleSidebarButton");
+const closeSidebarButton = document.getElementById("closeSidebarButton");
+
+const sidebar = document.getElementById("sidebar");
+
+toggleSidebarButton.addEventListener('click', () => {
+    sidebar.style.display = "block";
+    closeSidebarButton.style.display = "block";
+});
+
+
+closeSidebarButton.addEventListener("click", () => {
+
+    sidebar.style.display = "none";
+    toggleSidebarButton.style.display = "block";
+
+});
+
+;
