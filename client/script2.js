@@ -1723,13 +1723,22 @@ function chatStripe (isAi, value, uniqueId) {
     );
 }
 const handleSubmit = async (e) => {
+
     e.preventDefault();
 
     if (!activeChat) {
         return;
     }
+    const activeListItem = chatList.querySelector("li.active");
+
     welcomeDiv.style.display = 'none';;
     const data = new FormData(form);
+
+    let chatTitle = data.get("prompt");
+    if (chatTitle.length > 10) {
+        chatTitle = chatTitle.slice(0, 15) + "...";
+    }
+    activeListItem.textContent = chatTitle;
 
     // user's chatstripe
     activeChat.innerHTML += chatStripe(false, data.get("prompt"));
