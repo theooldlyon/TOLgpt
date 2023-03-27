@@ -46,8 +46,8 @@ app.get('/chatbot', (req, res) => {
     const chatbotFilePath = join(__dirname, '..', 'client', 'pages', 'chatbot.html');
     res.sendFile(chatbotFilePath);
 });
-app.get('/chatbot2', (req, res) => {
-    const chatbotFilePath = join(__dirname, '..', 'client', 'pages', 'chatbot2.html');
+app.get('/tolgpt', (req, res) => {
+    const chatbotFilePath = join(__dirname, '..', 'client', 'pages', 'tolgpt.html');
     res.sendFile(chatbotFilePath);
 });
 
