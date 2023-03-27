@@ -1734,7 +1734,10 @@ const handleSubmit = async (e) => {
     welcomeDiv.style.display = 'none';;
     const data = new FormData(form);
 
+
+
     let chatTitle = data.get("prompt");
+    chatTitle = chatTitle.charAt(0).toUpperCase() + chatTitle.slice(1);
     if (chatTitle.length > 10) {
         chatTitle = chatTitle.slice(0, 15) + "...";
     }
