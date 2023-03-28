@@ -214,6 +214,7 @@ body {
 }
 
 form {
+  position: fixed;
   background-color: transparent;
   color: white;
   width: 70vw;
