@@ -302,6 +302,7 @@ form img {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    height: 7vh;
     /* margin-top: 2vw; */
     /* padding: 5px; */
     background-color: rgb(25, 21, 21);
@@ -316,7 +317,7 @@ form img {
   }
   .ai {
     max-width: 100vw;
-    padding-bottom: 5vw;
+    padding-bottom: 7vh;
   }
   .message {
     margin-left: 2vw;
