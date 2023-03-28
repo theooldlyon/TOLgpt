@@ -154,7 +154,7 @@ body {
   opacity: 100%;
   padding: 20px;
   max-width: 85vw;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .chat {
@@ -302,6 +302,7 @@ form img {
     display: flex;
     flex-direction: row;
     gap: 10px;
+    margin-top: 2vw;
     /* padding: 5px; */
     background-color: rgb(25, 21, 21);
   }
