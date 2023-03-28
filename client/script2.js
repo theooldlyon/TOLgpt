@@ -1763,7 +1763,7 @@ const handleSubmit = async (e) => {
     loader(messageDiv);
 
     // const response = await fetch("https://tolgpt.onrender.com/", {
-    const response = await fetch("http://localhost:5000/", {
+    const response = await fetch("http://tolgpt.onrender.com/", {
 
         method: "POST",
         headers: {
