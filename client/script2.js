@@ -1,6 +1,9 @@
 
 // import bot from '/assets/bot.svg';
 // import user from '/assets/user.svg';
+// import * as dotenv from 'dotenv';
+
+
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 const bot = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -1762,8 +1765,9 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv);
 
+
     // const response = await fetch("https://tolgpt.onrender.com/", {
-    const response = await fetch("https://tolgpt.onrender.com/", {
+    const response = await fetch("http://localhost:5000", {
 
         method: "POST",
         headers: {

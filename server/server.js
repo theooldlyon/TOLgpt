@@ -9,7 +9,8 @@ dotenv.config();
 
 const configuration = new Configuration({
     organization: "org-18xF7PVjwhACpXni0MSFYuWy",
-    apiKey: process.env.OPENAI_API_KEY,
+    // apiKey: process.env.OPENAI_API_KEY,
+    apiKey: "TzftNALjl0vNnegEEl7qT3BlbkFJ7W1xim4aYEbLH1YpxCPp"
 });
 
 const openai = new OpenAIApi(configuration);
@@ -35,6 +36,7 @@ app.use(
     }
 
     ));
+
 app.post('/', async (req, res) => {
     try {
         const prompt = req.body.prompt;
@@ -43,20 +45,9 @@ app.post('/', async (req, res) => {
         const completion = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [ { role: "user", content: `${prompt}` } ],
-            // temperature: 1.5,
         });
-        // const response = await openai.createChatCompletion({
-        //     model: "gpt-3.5-turbo",
-        //     prompt: `${prompt}`,
-        //     temperature: 1, // Higher values means the model will take more risks.
-        //     max_tokens: 3000, // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
-        //     top_p: 1, // alternative to sampling with temperature, called nucleus sampling
-        //     frequency_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
-        //     presence_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 
-        //     model: "gpt-3.5-turbo",
-        //     messages: [ { role: "user", content: `${prompt}` } ],
-        // });
+        console.log(completion.data.choices[ 0 ].message.content);
 
         res.status(200).send({
             bot: completion.data.choices[ 0 ].message.content
@@ -67,12 +58,24 @@ app.post('/', async (req, res) => {
         res.status(500).send(error || 'Something went wrong');
     }
 });
+
 app.get('/', (req, res) => {
     const homeFilePath = join(__dirname, '..', 'client', 'pages', 'index.html');
     res.sendFile(homeFilePath);
 });
 
+// const response = await openai.createChatCompletion({
+//     model: "gpt-3.5-turbo",
+//     prompt: `${prompt}`,
+//     temperature: 1, // Higher values means the model will take more risks.
+//     max_tokens: 3000, // The maximum number of tokens to generate in the completion. Most models have a context length of 2048 tokens (except for the newest models, which support 4096).
+//     top_p: 1, // alternative to sampling with temperature, called nucleus sampling
+//     frequency_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
+//     presence_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
 
+//     model: "gpt-3.5-turbo",
+//     messages: [ { role: "user", content: `${prompt}` } ],
+// });
 
 app.get('/chatbot', (req, res) => {
     const chatbotFilePath = join(__dirname, '..', 'client', 'pages', 'chatbot.html');
